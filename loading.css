@@ -1,0 +1,49 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+body{
+    align-items: center;
+}
+section{
+
+    display: flex;
+    height: 15vh;
+    width: 50%;
+    background: #407040f4;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+    
+}
+.container{
+    margin-top: 5rem;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.lod{
+   margin-top: 10rem;
+   margin-right: 6rem;
+}
+section .dots span{
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    background: #fff;
+    border-radius: 50%;
+    transform: rotate(calc(var(--i) * (360deg / 15))) translateY(35px);
+    animation: animate 1.5s linear infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+    opacity: 0;
+    margin-left: 100px;
+}
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

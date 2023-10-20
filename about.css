@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+.About{
+    width: 100px;
+    color: #339b41;
+    font-size: 10px;
+}

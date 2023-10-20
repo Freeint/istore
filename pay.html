@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+     <!-- MATERIAL ICONS CDN-->
+     <script src="https://kit.fontawesome.com/8d796e2576.js" crossorigin="anonymous"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+     rel="stylesheet">
+      <!-- GOOGLE FONTS (POPPINS)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+ <!-- STYLESHEET -->
+ <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<div class="container">
+
+<h2 class="non">BTC </h2>
+<img src="images/btc.jpg" alt="">
+<h5 class="keep">copy BTC Address and make the payment</h5>
+<div class="copy-link">
+ <input type="text" class="copy-link-input" value="bc1qjnhqcjc7xswesl6kgg47mph9ned4nzjh05mhsm" readonly>
+ <button type="button" class="copy-link-button">
+     <span class="material-icons-sharp">content_copy</span>
+ </button>
+</div>
+<div class="con">
+    <a href="#">Confirm</a>
+</div>
+
+</div>
+<script>
+    document.querySelectorAll(".copy-link").forEach(copyLinkCountainer => {
+        const inputFiled = copyLinkCountainer.querySelector(".copy-link-input");
+        const copyButton = copyLinkCountainer.querySelector(".copy-link-button");
+
+        inputFiled.addEventListener("focus", () => inputFiled.select());
+
+        copyButton.addEventListener("click", () => {
+            const text = inputFiled.value;
+
+            inputFiled.select();
+            navigator.clipboard.writeText(text);
+
+            inputFiled.value ="Copied",
+            setTimeout(() => inputFiled.value = text, 2000);
+        })
+    })
+</script>
+</body>
+</html>
